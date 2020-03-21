@@ -1,0 +1,13 @@
+
+#Visual Studio Settings
+
+**/.settings
+**/.project
+**/.classpath
+**/.vscode
+
+.idea/
+.factorypath
+**/*.iml
+**/*.Ist
+target/

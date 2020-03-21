@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import SampleComponent from './components/SampleComponent';
+import { MapComponent } from './components/MapComponent';
+import BottomTabBar from './components/BottomTabBar';
 import CartComponent from './components/CartComponent';
 import OwnCartComponent from './components/OwnCartComponent';
 import {User} from './types';
@@ -72,6 +74,8 @@ function App() {
       <SampleComponent />
       <CartComponent currentUser={loggedInUser} cartUser={dummyUser} />
       <OwnCartComponent currentUser={loggedInUser} />
+      <MapComponent/>
+      <BottomTabBar/>
     </div>
   );
 }
