@@ -1,11 +1,13 @@
 package org.wirvsvirus.shareyourcart.objects;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
 @Data
 public class ShoppingItem {
+    @Id
     String id;
     String name;
     String claimedBy;
