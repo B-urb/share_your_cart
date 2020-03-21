@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.7",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -11,8 +12,10 @@
     "@types/node": "^12.12.30",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
+    "leaflet": "^1.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-leaflet": "^2.6.3",
     "react-scripts": "3.4.1",
     "typescript": "^3.7.5"
   },
@@ -36,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/google-map-react": "^1.1.5",
+    "@types/react-leaflet": "^2.5.1"
   }
 }
