@@ -11,6 +11,7 @@ import CommentIcon from '@material-ui/icons/Comment';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
 import Snackbar from '@material-ui/core/Snackbar';
+import {useParams} from 'react-router-dom';
 
 import {ShoppingItem, User} from '../types';
 
@@ -27,6 +28,8 @@ interface Properties {
 }
 
 export default function CardComponent(props: Properties) {
+  const { id } = useParams();
+  // TODO request to backend
   const { currentUser, cartUser } = props;
   const classes = useStyles();
 

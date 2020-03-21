@@ -6,11 +6,14 @@ import { Map, TileLayer, Marker, ZoomControl } from 'react-leaflet';
 import { LatLngTuple } from 'leaflet';
 import { MapUserDetailComponent } from './MapUserDetailComponent';
 
-
 import MAP_DATA, { DEFAULT_LOCATION } from '../fixtures/samplemapdata';
 import { Button } from '@material-ui/core';
 
+import {useHistory} from 'react-router-dom';
+
 export const MapComponent = () => {
+    const history = useHistory();
+
     const mapRef = useRef<any>(null);
     const [currentCenter, setCurrentCenter] = useState(DEFAULT_LOCATION);
     const [currentZoom, setCurrentZoom] = useState<number>(21);
@@ -51,7 +54,7 @@ export const MapComponent = () => {
                 data-counter={user.shoppingItems?.length}
                 key={user.id!!}
                 position={[user.homePosition?.lat, user.homePosition?.lng] as LatLngTuple}
-                onClick={() => { setDisplayedUser(user.id!!); }}
+                onClick={() => { setDisplayedUser(user.id!!); history.push('/cart/userid2') }}
             ></Marker>)}
             <ZoomControl position="bottomright"/>
         </Map>
