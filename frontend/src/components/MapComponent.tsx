@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import React, { useState, useRef } from 'react';
 
 import './MapComponent.css';
@@ -8,6 +9,7 @@ import { MapUserDetailComponent } from './MapUserDetailComponent';
 
 import MAP_DATA, { DEFAULT_LOCATION } from '../fixtures/samplemapdata';
 import { Button } from '@material-ui/core';
+import MapBoxGLLayer from './MapBoxGLLayer';
 
 import {useHistory} from 'react-router-dom';
 
@@ -48,7 +50,11 @@ export const MapComponent = () => {
             onlocationfound={handleLocationFound}
             onMoveend={handleMove}
         >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            {/* <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" /> */}
+            <MapBoxGLLayer
+                accessToken='not-needed'
+                style='https://api.maptiler.com/maps/16633042-281e-40f2-8efe-e2628c8b1685/style.json?key=RFYxgHv45nsn3176diJN'
+            />
             {MAP_DATA.map(user => <Marker
                 icon={MapMarkerComponent}
                 data-counter={user.shoppingItems?.length}
