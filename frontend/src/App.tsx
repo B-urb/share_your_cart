@@ -1,11 +1,17 @@
 import React from 'react';
 import './App.css';
-import {User} from './types';
-
+import Navigation from './navigation';
+import { 
+  BrowserRouter as Router,
+} from 'react-router-dom';
 
 function App() {
 
-  return (<div></div>);
+  return (<React.StrictMode>
+    <Router>
+      <Navigation />
+    </Router>
+  </React.StrictMode>);
 }
 
 export default App;

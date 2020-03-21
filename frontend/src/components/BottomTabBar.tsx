@@ -11,9 +11,8 @@ export const BottomTabBar = () => {
     const history = useHistory();
 
     return (
-        <div style={{bottom: 0, position: 'absolute', width: '100%'}}>
+        <div style={{backgroundColor: 'transparent', bottom: 0, position: 'absolute', width: '100%', zIndex: 1000 }}>
             <BottomNavigation
-                
                 value={value}
                 onChange={(event, newValue) => {
                     setValue(newValue);
