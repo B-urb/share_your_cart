@@ -14,7 +14,7 @@ interface ShoppingItem {
 interface User {
     id: string;
     phone: string;
-    position: GPSPosition;
+    homePosition: GPSPosition;
     shoppingItems: ShoppingItem[];
     updatedAt: Date;
     createdAt: Date;
