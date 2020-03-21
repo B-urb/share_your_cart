@@ -1,0 +1,17 @@
+
+#Visual Studio Settings
+
+**/.settings
+**/.project
+**/.classpath
+**/.DS_Store
+**/.vscode
+**/*.class
+
+.DS_Store
+.idea/
+.factorypath
+**/.iml
+**/.Ist
+target/
+Shareyourcart-backend.iml
