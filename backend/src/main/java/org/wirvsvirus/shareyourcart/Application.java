@@ -25,7 +25,7 @@ public class Application {
 
     @PostMapping("/list")
     public String postList() {
-        return String.format("Welcome to the share-your-cart backend! (Running since: %s)", STARTUP_TS);
+        return String.format("Post /list", STARTUP_TS);
     }
 
     @GetMapping("/list/{uid}")
