@@ -1,9 +1,9 @@
-interface GPSPosition {
+export interface GPSPosition {
     lat: number;
     lng: number;
 }
 
-interface ShoppingItem {
+export interface ShoppingItem {
     name: string;
     claimedBy: string; // user_id
     claimedAt: Date;
@@ -11,7 +11,7 @@ interface ShoppingItem {
     receivedAt: Date;
 }
 
-interface User {
+export interface User {
     id: string;
     phone: string;
     homePosition: GPSPosition;
