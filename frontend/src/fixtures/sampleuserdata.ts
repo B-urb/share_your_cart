@@ -1,7 +1,7 @@
 import {User} from '../types';
 
 export const loggedInUser: User = {
-id: 'useridfelix',
+id: 'felix',
 name: 'Felix',
 phone: '123456789',
 homePosition: {
@@ -20,7 +20,7 @@ shoppingItems: [
     {
     id: "12ddssd4",
     name: "Klopapier",
-    claimedBy: "useridfelix", // user_id
+    claimedBy: "maurice", // user_id
     claimedAt: new Date(),
     deliveredAt: new Date(),
     receivedAt: null,
@@ -31,7 +31,7 @@ createdAt: new Date(),
 };
 
 export const dummyUser: User = {
-id: 'userid2',
+id: 'maurice',
 name: 'Maurice',
 phone: '123456789',
 homePosition: {
@@ -50,12 +50,41 @@ shoppingItems: [
     {
     id: "124",
     name: "Nudeln",
-    claimedBy: "useridfelix", // user_id
+    claimedBy: "felix", // user_id
     claimedAt: new Date(),
     deliveredAt: new Date(),
     receivedAt: null,
+    },
+    {
+        id: "124",
+        name: "Gabeln",
+        claimedBy: "felix", // user_id
+        claimedAt: new Date(),
+        deliveredAt: new Date(),
+        receivedAt: null,
     },
 ],
 updatedAt: new Date(),
 createdAt: new Date(),
 };
+
+export const dummyClaimedItems = [
+    {
+        owner: "maurice",
+        id: "asjfdsfksjfl",
+        name: "Mehl",
+        claimedBy: "felix", // user_id
+        claimedAt: new Date(),
+        deliveredAt: null,
+        receivedAt: null,
+    },
+    {
+        owner: "maurice",
+        id: "asjfdksaghsdsjfl",
+        name: "Reis",
+        claimedBy: "felix", // user_id
+        claimedAt: new Date(),
+        deliveredAt: null,
+        receivedAt: null,
+    },
+];

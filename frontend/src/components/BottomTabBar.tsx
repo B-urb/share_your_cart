@@ -20,9 +20,9 @@ export const BottomTabBar = () => {
                 }}
                 showLabels
             >
-                <BottomNavigationAction onClick={() => history.push('/')} label="Karte" icon={<MapOutlined />} />
-                <BottomNavigationAction onClick={() => history.push('/cart')} label="Einkaufsliste" icon={<ListOutlined />} />
-                <BottomNavigationAction onClick={() => history.push('/')} label="Profil" icon={<PersonOutline />} />
+                <BottomNavigationAction onClick={() => history.push('/')} label="Map" icon={<MapOutlined />} />
+                <BottomNavigationAction onClick={() => history.push('/cart')} label="Shopping list" icon={<ListOutlined />} />
+                <BottomNavigationAction onClick={() => history.push('/profile')} label="Profile" icon={<PersonOutline />} />
             </BottomNavigation>
         </div>
     );

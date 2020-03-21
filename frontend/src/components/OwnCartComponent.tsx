@@ -7,7 +7,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
-import CommentIcon from '@material-ui/icons/Comment';
+import DeleteIcon from '@material-ui/icons/Delete';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
@@ -15,6 +15,14 @@ import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
 import Snackbar from '@material-ui/core/Snackbar';
 
 import {ShoppingItem, User} from '../types';
+
+
+const datePriority = ['receivedAt', 'deliveredAt', 'claimedAt'];
+const dateMap = {
+  claimedAt: 'claimed at',
+  deliveredAt: 'delivered at',
+  receivedAt: 'received at',
+}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -43,7 +51,16 @@ export default function CardComponent(props: Properties) {
 
   const [{input}, setInput] = React.useState({ input: '' })
 
+  const deleteItem = (item: ShoppingItem) => {
+    // TODO post request to backend
+    // set received parameter
+    currentUser.shoppingItems = currentUser.shoppingItems.filter(x => x.id != item.id);
+    setInput({input}); // trigger rerender
+  }
+
   const addItem = () => {
+    if (input == '') return;
+
     // TODO post request ans backend
     currentUser.shoppingItems.push({
       id: new Date().toISOString(),
@@ -64,6 +81,15 @@ export default function CardComponent(props: Properties) {
         {currentUser.shoppingItems.map(value => {
           const labelId = `checkbox-list-label-${value.id}`;
 
+          let status = '';
+          if (value.claimedBy != null) {
+            for (const key of datePriority) {
+              if (value[key] == null) continue;
+              status = `${dateMap[key]}: ${formatDate(value[key])} by ${value.claimedBy}`;
+              break;
+            }
+          }
+
           return (
             <ListItem key={value.id} role={undefined} dense button onClick={() => console.log('test')}>
               <ListItemIcon>
@@ -77,9 +103,10 @@ export default function CardComponent(props: Properties) {
               </ListItemIcon>
               <ListItemText id={labelId} primary={value.name} />
               <ListItemSecondaryAction>
-                <IconButton edge="end" aria-label="comments">
-                  <CommentIcon />
-                </IconButton>
+                {status}
+              <IconButton style={{ marginLeft: '5px' }} edge="end" aria-label="comments" onClick={() => deleteItem(value)}>
+                <DeleteIcon />
+              </IconButton>
               </ListItemSecondaryAction>
             </ListItem>
           );
@@ -88,6 +115,7 @@ export default function CardComponent(props: Properties) {
               
             <TextField
               style={{ width: '80%' }}
+              autoComplete="off"
               id="standard-basic"
               label="Add Item"
               onChange={e => setInput({input: e.target.value})}

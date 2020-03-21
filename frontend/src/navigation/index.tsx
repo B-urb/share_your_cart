@@ -7,7 +7,9 @@ import { MapComponent } from '../components/MapComponent';
 import BottomTabBar from '../components/BottomTabBar';
 import CartComponent from '../components/CartComponent';
 import OwnCartComponent from '../components/OwnCartComponent';
+import ProfileComponent from '../components/ProfileComponent';
 import {loggedInUser, dummyUser} from '../fixtures/sampleuserdata';
+//import {dummyClaimedItems} from '../fixtures/samplemapdata';
 
 export default function Navigation () {
     return (
@@ -23,6 +25,10 @@ export default function Navigation () {
                 
                 <Route exact path="/cart">
                     <OwnCartComponent currentUser={loggedInUser} />
+                </Route>
+
+                <Route exact path="/profile">
+                    <ProfileComponent/>
                 </Route>
             </Switch>
             <BottomTabBar/>
