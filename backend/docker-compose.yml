@@ -1,0 +1,14 @@
+version: "3"
+services:
+  api-database:
+    image: mongo:3.2.4
+    container_name: "api-database"
+    ports:
+      - 27017:27017
+    command: --smallfiles
+  api:
+    image: registry.gitlab.com/bjoern_urban_5/share_your_cart
+    ports:
+      - 8080:8080
+    links:
+      - api-database
