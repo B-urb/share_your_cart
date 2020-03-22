@@ -5,6 +5,7 @@ import org.wirvsvirus.shareyourcart.mongodb.models.UserModel;
 import org.wirvsvirus.shareyourcart.mongodb.repos.UserRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -17,6 +18,10 @@ public class UserService {
     }
 
     public List<UserModel> findAll(){
-        return userRepository.findAll();
+        return (List<UserModel>) userRepository.findAll();
+    }
+
+    public Optional<UserModel> findById(String id){
+        return userRepository.findById(id);
     }
 }

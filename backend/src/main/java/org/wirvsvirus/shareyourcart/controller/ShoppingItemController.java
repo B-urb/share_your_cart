@@ -24,7 +24,7 @@ public class ShoppingItemController {
     @PostMapping("/list")
     public ResponseEntity postList(ItemSaveRequest itemSaveRequest) {
         log.info("Request: {}", itemSaveRequest);
-        shoppingItemService.saveUser(itemSaveRequest.toShoppingItemModel());
+        shoppingItemService.saveItem(itemSaveRequest.toShoppingItemModel());
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 

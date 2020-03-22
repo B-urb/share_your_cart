@@ -4,7 +4,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import org.springframework.stereotype.Component;
 import org.wirvsvirus.shareyourcart.mongodb.models.ShoppingItemModel;
-import org.wirvsvirus.shareyourcart.mongodb.models.UserModel;
 
 
 @Component

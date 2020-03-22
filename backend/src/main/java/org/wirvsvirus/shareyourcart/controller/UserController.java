@@ -1,14 +1,13 @@
 package org.wirvsvirus.shareyourcart.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.wirvsvirus.shareyourcart.dto.UserSaveRequest;
 import org.wirvsvirus.shareyourcart.mongodb.models.UserModel;
 import org.wirvsvirus.shareyourcart.mongodb.services.UserService;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -20,10 +19,11 @@ public class UserController {
     public UserController(UserService userService){this.userService = userService;}
 
     @PostMapping("/user")
-    public ResponseEntity postUser(@RequestBody UserSaveRequest userSaveRequest) {
+    public String postUser(@RequestBody UserSaveRequest userSaveRequest) {
         log.info("Request: {}", userSaveRequest);
-        userService.saveUser(userSaveRequest.toUserModel());
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        UserModel user = userSaveRequest.toUserModel();
+        userService.saveUser(user);
+        return user.getId();
     }
 
     @GetMapping("/user")
@@ -32,8 +32,9 @@ public class UserController {
     }
 
     @GetMapping("/user/{uid}")
-    public String getUser(@PathVariable("uid") String uid) {
-        return String.format("Get /user/uid");
+    public Optional<UserModel> getUser(@PathVariable("uid") String uid)
+    {
+        return userService.findById(uid);
     }
 
     @PutMapping("/user/{uid}")

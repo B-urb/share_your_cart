@@ -7,7 +7,6 @@ import java.util.Date;
 
 @Data
 public class ShoppingItem {
-    @Id
     String id;
     String name;
     String claimedBy;

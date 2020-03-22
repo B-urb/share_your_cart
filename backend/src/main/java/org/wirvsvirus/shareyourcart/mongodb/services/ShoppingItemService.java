@@ -12,11 +12,11 @@ public class ShoppingItemService {
 
     public ShoppingItemService(ShoppingItemRepository shoppingItemRepository){this.shoppingItemRepository=shoppingItemRepository;}
 
-    public ShoppingItemModel saveUser(ShoppingItemModel shoppingItemModel){
+    public ShoppingItemModel saveItem(ShoppingItemModel shoppingItemModel){
         return shoppingItemRepository.save(shoppingItemModel);
     }
 
     public List<ShoppingItemModel> findAll(){
-        return shoppingItemRepository.findAll();
+        return (List<ShoppingItemModel>) shoppingItemRepository.findAll();
     }
 }
