@@ -7,15 +7,15 @@ im hackathon WirVsVirus https://wirvsvirushackathon.org , https://twitter.com/Wi
 
 ## Problem
 
-Supermärkte gehören zu den wenigen Orten, welche man während einer Pandemie nicht schließen kann. Dort entsteht durch die hohe Menschendichte ein großes Infektionsrisiko. Um unnötige Einkaufsgänge zu vermeiden, können Nachbarn, welche gerade auf dem Weg zum Einkaufen sind, Kleinigkeiten für einen selber mitbringen.  
+Supermärkte gehören zu den wenigen Orten, welche man während einer Pandemie nicht schließen kann. Dort entsteht durch die hohe Menschendichte ein großes Infektionsrisiko. Um unnötige Einkaufsgänge zu vermeiden, können Nachbarn, welche gerade auf dem Weg zum Einkaufen sind, Kleinigkeiten für einen selber mitbringen.
 Wie findet dieser Informationsaustausch statt, wenn ich die Nachbarn nicht persönlich kenne?
 
 ## Idee
 
-Nachbarn können ihre Einkaufszettel zusammen mit Ihrer Geo Position teilen. Andere Nutzer können Einkaufszettel in Ihrer Nähe einsehen und diese abarbeiten.  
+Nachbarn können ihre Einkaufszettel zusammen mit Ihrer Geo Position teilen. Andere Nutzer können Einkaufszettel in Ihrer Nähe einsehen und diese abarbeiten.
 So können Infektionspunkte durch eingesparte Einkaufsgänge und weniger Menschenmassen in Supermärkten reduziert werden.
 
-## Beispiel 
+## Beispiel
 
 Sabine ist verantwortungsvoll und hat soeben für die nächsten 4 Tage eingekauft damit sie nicht jeden Tag vor die Tür muss. Am Nachmittag ist Ihr allerdings aufgefallen, dass sie vergessen hat Mehl zu kaufen welches sie dringend benötigt.
 Normalerweise würde sie nun noch einmal zum Supermarkt fahren und Mehl einkaufen. Dies ist jedoch sehr unverantwortlich, da sie nun für eine Kleinigkeit die Menschendichte im Supermarkt erhöht.
@@ -38,3 +38,4 @@ Falls also Oma Hildegard noch Mehl für Ihren Kuchen braucht, kann der sportlich
 - Slack: https://app.slack.com/client/T0104UWB020/G010G13199B (private channel, bitte melden bei der Autoren der Submission)
 - VideoConference: https://meet.jit.si/ShareMyCart
 - Github: https://github.com/B-urb/share_your_cart
+- Demo: https://youtu.be/oY5He5cadEU
