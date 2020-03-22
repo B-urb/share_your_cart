@@ -22,7 +22,7 @@ public class ShoppingItemController {
     public ShoppingItemController(ShoppingItemService shoppingItemService){this.shoppingItemService = shoppingItemService;}
 
     @PostMapping("/list")
-    public ResponseEntity postList(ItemSaveRequest itemSaveRequest) {
+    public ResponseEntity postList(@RequestBody ItemSaveRequest itemSaveRequest) {
         log.info("Request: {}", itemSaveRequest);
         shoppingItemService.saveItem(itemSaveRequest.toShoppingItemModel());
         return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -33,6 +33,7 @@ public class ShoppingItemController {
     {
         return shoppingItemService.findAll();
     }
+
 
     @GetMapping("/list/{uid}")
     public String getListUid(@PathVariable("uid") String uid) {
